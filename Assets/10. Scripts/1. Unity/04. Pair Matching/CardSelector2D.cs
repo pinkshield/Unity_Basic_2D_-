@@ -18,7 +18,7 @@ namespace Study.PairMatchingGame
         public float cursorYOffset = -0.5f;
 
         private Card[,] cards; 
-        private int currentIndex = 2;
+        
 
         private Card selectCardA;
         private Card selectCardB;

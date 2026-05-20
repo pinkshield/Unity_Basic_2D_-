@@ -221,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938025166}
   - component: {fileID: 938025167}
+  - component: {fileID: 938025168}
   m_Layer: 0
   m_Name: Study
   m_TagString: Untagged
@@ -250,11 +251,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938025164}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02b07550e4571fb4d96f7900452a49c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Study_DataStructure.Study_List
+--- !u!114 &938025168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938025164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd83a401c1c7184eba85e8c386e724c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Study_DataStructure.Study_Queue
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
