@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Study.PrimitiveAndVector
 {
-    public class CapsulePlayer : MonoBehaviour
+    public class CapsulePlayer_ : MonoBehaviour
     {
         // 캡슐 플레이어
         // 1. 화살표(좌,우)를 이용한 이동 및 표현
@@ -23,17 +23,17 @@ namespace Study.PrimitiveAndVector
 
         private Rigidbody2D rBody;
         private Collider2D col;
-        public float jumpPower = 100;
+        
 
         private void Awake()
         {
             rBody = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
         }
-        
+
         private void FixedUpdate()
         {
-            if(Keyboard.current.leftArrowKey.isPressed)
+            if (Keyboard.current.leftArrowKey.isPressed)
             {
                 SetSunGlassState(State.Left);
                 Move(Vector3.left);
@@ -48,10 +48,12 @@ namespace Study.PrimitiveAndVector
                 SetSunGlassState(State.Idle);
             }
 
-            if(Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 Jump();
             }
+
+            
         }
 
         private void SetSunGlassState(State state)
@@ -73,19 +75,36 @@ namespace Study.PrimitiveAndVector
 
             // 이번 프레임에 움직일 벡터의 크기 : 이번 프레임 이동량
             Vector3 moveVector = dir * (speed * Time.fixedDeltaTime);
-            
+
             // 내 위치와 이동량을 더해줍니다
             rBody.MovePosition(transform.position + moveVector);
         }
 
-        
+
 
         private void Jump()
         {
-            // AddForce를 사용하지 않고 점프를 구현해보세요
-            // moveVector에 수평적 움직과 점프의 수직적 움직임을 통합
-            // 하면 됩니다
-            rBody.AddForceY(jumpPower, ForceMode2D.Impulse);
+
         }
-    }
+
+        [Header("Settings")]
+        public float gravity = -9.81f; // 현실세계 중력 가속도
+        public float jumpPower = 8.0f;
+        public int maxJumpCount = 2;
+
+        private float verticalVelocity = 0.0f;
+        private bool isGrounded = false;
+
+        private void ApplyGravity()
+        {
+            const float groundStickSpeed = -2.0f;
+
+            if (isGrounded && verticalVelocity <= 0)
+            {
+                verticalVelocity += groundStickSpeed;
+            }
+            else; 
+            
+        }
+    }        
 }
