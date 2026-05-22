@@ -6,7 +6,7 @@ namespace Study.PrimitiveAndVector
 
     public class StudyLerp : MonoBehaviour       
     {
-        public bool isRun = false;
+        
 
         public float speed = 1.0f;
         public float goalTime = 2.0f;
@@ -25,7 +25,7 @@ namespace Study.PrimitiveAndVector
         private void Update()
         {
             // startPosition 에서 goalPosition 까지 보간을 이용해 움직이는 코드를 작성해봅시다
-            if (isRun)
+            if (true)
             {
                 currentTime += Time.deltaTime;
                 
