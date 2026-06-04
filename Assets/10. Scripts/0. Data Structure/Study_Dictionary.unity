@@ -297,7 +297,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 938025164}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 5034bfb62893cab45bed51bbe79794d4, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: cb3d69117b4bdcd4895435c5805776e3, type: 3}
+>>>>>>> Stashed changes
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Study_Dictionary
 --- !u!1660057539 &9223372036854775807

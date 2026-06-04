@@ -18,7 +18,11 @@ namespace Study.PairMatchingGame
         public float cursorYOffset = -0.5f;
 
         private Card[,] cards; 
+<<<<<<< Updated upstream
         //private int currentIndex = 2;
+=======
+        
+>>>>>>> Stashed changes
 
         private Card selectCardA;
         private Card selectCardB;

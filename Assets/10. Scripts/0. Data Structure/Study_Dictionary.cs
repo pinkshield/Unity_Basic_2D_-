@@ -1,6 +1,13 @@
+<<<<<<< Updated upstream
 using System;
 using System.Collections.Generic;
 using UnityEngine; // 자료 구조사용하려면 해당 네임스페이스를 사용해야 합니다
+=======
+using UnityEngine;
+using System;
+using System.Collections.Generic; 
+
+>>>>>>> Stashed changes
 
 namespace Study_DataStructure
 {
@@ -13,6 +20,7 @@ namespace Study_DataStructure
 
         private void StudyDictionary()
         {
+<<<<<<< Updated upstream
             // # Dictionary<TKey, TValue>는 '이름표가 붙은 사물함' 또는 '전화번호부'
             // - 키(Key)와 값(Value)의 쌍(Pair) : 각 사물함에는(Value)에는 고유한
             //  이름표(Key)가 붙어 있습니다. 이 이름표를 통해서 원하는 사물함의
@@ -129,6 +137,110 @@ namespace Study_DataStructure
             //  : "DatabaseConnectionString : Server = ..."과 같이 이름과 값의
             //   쌍으로 데이터를 관리해야 할 떄
             // - 데이터의 존재 여부를 빠르게 확인해야 할 때
+=======
+            // # Dictionary<TKey, TValue> 는 이름표가 붙은 사물함 혹은 전화번호부
+            // -키(Key) 와 값 (Value) 쌍(Pair) : 각 사물함에는 (Value) 에는 고유한
+            // 이름표가 있다. 이 이름표를 통해 원하는 사물함의 내용물을 아주 빨리 찾을수 있다
+            // 고유한 키: 모든 이름표(Key)는 서로 달라야 한다. 같은 이름표를 가진 사물함은
+            // 절대 있을수 없다. 
+
+            Dictionary<string, int> studentAge;
+            studentAge = new Dictionary<string, int>();
+
+            //1. Dictionary 생성
+            Debug.Log($"1. Dictionary의 생성 : 키와 값의 타입 알려주기");
+            Debug.Log($"학생정보 개수: {studentAge.Count} ");
+            Debug.Log($"");
+
+
+            //2 데이터 추가: .Add(Key, Value)
+
+            studentAge.Add("로건", 23);
+            studentAge.Add("미미", 25);
+            studentAge.Add("아른", 26);
+
+            Debug.Log($"2. 학생 세명 추가");
+            Debug.Log($"학생정보 개수: {studentAge.Count} ");
+            Debug.Log($"");
+
+            // 같은 Key로 데이터를 추가한다면 
+
+            Debug.Log($"데이터의 접근");
+            Debug.Log($"로건의 나이 : {studentAge["로건"]}");
+            Debug.Log($"미미의 나이 : {studentAge["미미"]}");
+            Debug.Log($"아른의 나이 : {studentAge["아른"]}");
+
+            // 없는 key로 데이터에 접근하면 오류가 발생
+
+            // 키가 있는지 안전하게 확인하고 싶을 때 .TryGetValue() 를 사용한다
+
+            Debug.Log($"3.1 키 존재 여부");
+            if (studentAge.TryGetValue("로건", out int lgAge))
+            {
+                Debug.Log($"로건의 나이: {lgAge}");
+            }
+
+            if (studentAge.TryGetValue("민근", out int mgAge))
+            {
+                Debug.Log($"민근의나이: {mgAge}");
+            }
+
+            else
+            {
+                Debug.Log($"학생 정보가 없습니다");
+            }
+
+            // 그냥 키가 존재하는 지 여부만 확인 하고 싶을 때
+            // 3.2 키 존재 여부 확인: .Contains()
+
+            Debug.Log($"로건의 정보가 있나요? {studentAge.ContainsKey("로건")}");
+
+            // 4. 데이터 수정: Key 를 사용하여 접근 후 수정
+
+            Debug.Log("4. 데이터 수정 : 미미");
+            studentAge["미미"] = 30;
+            Debug.Log($"수정된 미미의 나이: {studentAge["미미"]}");
+
+            // 5. 데이터 삭제: .Remove(Key)
+            // 특정키의 해당하는 데이터 쌍(Pair)를 삭제한다 
+
+            Debug.Log("미미의 데이터 삭제 후");
+            studentAge.Remove("미미");
+            Debug.Log($"미미는 삭제되었나? {studentAge.Count}");
+
+
+            //6. 모든 데이터 확인: 반복문
+            // pair를 확인 하는 법  
+            Debug.Log($"6. 모든 학생 정보 확인");
+            foreach (KeyValuePair<string, int> entry in studentAge)
+            {
+                Debug.Log($"이름: {entry.Key}, 나이{entry.Value}");
+            }
+            Debug.Log("");
+
+            // 모든키만 따로 확인 하는 법: .Keys
+
+            foreach (string name in studentAge.Keys)
+            {
+                Debug.Log($"이름: {name}");                               
+            }
+
+
+            // 모든 밸류만 따로 확인 하는 법: .Keys
+
+            foreach (int age in studentAge.Values)
+            {
+                Debug.Log($"나이: {age}");
+            }
+
+            // 정리: 언제 사용할까?
+            // 고유한 식별자(key)로 특정 데이터(Value)를 빠르게 찾아야 할 때
+            // : 사용자 ID로 사용자 정보를 찾거나, 상품 코드로 상품 상세 정보를 찾을 때 
+            // 매우 효율적이다. 
+            // 설정 값이나 환경 변수를 관히 할때
+            // "DatabaseConeectionString: Server = ... 과 같이 이름과 같이 쌍으로 데이터를 관리할때
+            // 
+>>>>>>> Stashed changes
         }
     }
 }

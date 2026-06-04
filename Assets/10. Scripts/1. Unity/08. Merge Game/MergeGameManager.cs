@@ -11,6 +11,14 @@ namespace Study.MergeGame
         // 전역적인 접근을 허용합니다.
         public static MergeGameManager Instance;
 
+        // 게임오버가 되면 활성화 될 개체들과
+        [Header("GameOver Settings")]
+        public GameObject[] enableObjects;
+
+        // 게임오버가 되면 비활성화 될 개체들
+        public GameObject[] disAbleObjects;
+
+
         public AnimalBall[] BallPrefabs;
         public int maxIndexInQueue = 4;
 
@@ -95,6 +103,36 @@ namespace Study.MergeGame
             AddScore(upgradeLevel);
         }
 
+<<<<<<< Updated upstream
+=======
+        public TMP_Text text;
+        private Dictionary<int, int> scoreTable = new Dictionary<int, int>();
+        private int score = 0;
+
+        private void Start()
+        {
+            scoreTable.Add(1, 10);
+            scoreTable.Add(2, 20);
+            scoreTable.Add(3, 30);
+            scoreTable.Add(4, 40);
+            scoreTable.Add(5, 50);
+            scoreTable.Add(6, 70);
+            scoreTable.Add(7, 80);
+            scoreTable.Add(8, 90);
+            scoreTable.Add(9, 100);
+            text.SetText($"{score}");
+
+        }
+
+        private void AddScore(int upgradeLevel)
+        {
+            score += scoreTable[upgradeLevel];
+            text.SetText($"{score}");
+        }
+
+        
+
+>>>>>>> Stashed changes
         public void GameOver()
         {
             for(int i = 0; i < enableObjects.Length; ++i)
