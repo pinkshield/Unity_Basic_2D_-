@@ -121,7 +121,6 @@ namespace Study.LayerAndScroll
 
         // 랜덤한 Layer를 대기열에 넣어두고, 앞으로 나올 Layer들을 미리 알아봅시다.
         private Queue<GameObject> layerQueue = new Queue<GameObject>();
-        
 
         // 이 함수는 호출되면 랜덤한 레이어를 생성만 해서 반환합니다.
         private GameObject SpawnRandomLayer()
@@ -164,7 +163,6 @@ namespace Study.LayerAndScroll
             {
                 // 대기열의 가장 앞에 있는 개체를 꺼냅니다.
                 GameObject enableLayer = layerQueue.Dequeue();
-
                 enableLayer.SetActive(true);
                 // enableLayerList에 추가해서 움직이게 만들어 줍니다.
                 enableLayerList.Add(enableLayer);
